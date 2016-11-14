@@ -1,0 +1,129 @@
+// $breakpoints: (
+//    'xs': 320px,
+//    'small' : 480px,
+//    'medium': 1024px,
+//    'large': 1440px
+// );
+
+// $mappy-queries: (
+//    'phone': mappy-bp(h max-width small), // media all and (max-height: 29.9375em)
+//    'tablet': mappy-bp(small medium), // @media all and (min-width 30em) and (max-width: 49.375em)
+//    'desktop': mappy-bp(min-width medium), // media all and (min-width: 60em) and (max-width: 74.9375em)
+//    'large-desktop': mappy-bp(min-width large), // media all and (min-width: 60em) and (max-width: 74.9375em)
+//    'change-type': mappy-bp(small, $type: screen) // media screen and (min-width: 30em)
+// );
+
+$breakpoints: (
+  small: 480px,
+  large: 800px
+);
+
+// You can use and valid arguments inserted into mappy-bp as the map values. Any of the following would do
+$mappy-queries: (
+  'phone': mappy-bp(max-width small)// media all and (max-height: 29.9375em)
+);
+
+
+
+
+
+
+// Susy grid
+$desktop:(
+     flow: ltr,
+     math: fluid,
+     output: float,
+     gutter-position: inside,
+     container-position: center,
+     columns: 12,
+     gutters: .25,
+);
+
+@include with-layout($desktop) { 
+   .col__12{
+      @include span(12);
+   }
+   .col__11{
+      @include span(11);
+   }
+   .col__10{
+      @include span(10);
+   }
+   .col__9{
+      @include span(9);
+   }
+   .col__8{
+      @include span(8);
+   }
+   .col__7{
+      @include span(7);
+   }
+   .col__6{
+      @include span(6);
+   }
+   .col__5{
+      @include span(5);
+   }
+   .col__4{
+      @include span(4);
+   }
+   .col__3{
+      @include span(3);
+   }
+   .col__2{
+      @include span(2);
+   }
+   .col__1{
+      @include span(1);
+   }
+}
+
+
+
+
+
+.container{
+    display: block;
+    width: 1170px;
+    margin: 0 auto;
+    @include clearfix;
+    &__small{
+        width: 940px;
+    }
+}
+
+.row{
+  @include clearfix;
+}
+.gutter{
+   &--leftonly{
+      padding-left: 0.83333%;
+      padding-right: 0;
+   }
+   &--leftdouble{
+      padding-left: 1.3888%;
+      padding-right: 0
+   }
+   &--rightdouble{
+      padding-right: 1.3888%;
+      padding-left: 0
+   }
+   &--rightonly{
+      padding-right: 0.83333%;
+      padding-left: 0;
+   }
+   &--both{
+      padding: 0 1.3888%;
+   }
+   &--none{
+      padding-left: 0;
+      padding-right: 0;
+   }
+   &--super{
+      padding-left: 5%;
+      padding-right: 5%;
+   }
+   &--min{
+      margin: 0 -0.83333%;
+   }
+}

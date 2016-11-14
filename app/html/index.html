@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- inject:css -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,800" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+		<link rel="stylesheet" href="../css/font-awesome.css">
+		<link rel="stylesheet" href="../css/style.css">
+	<!-- endinject -->
+
+	<title>NARRADA</title>
+</head>
+<body>
+	<header id="header">
+	</header>
+
+	<main id="main">
+		<!-- <button id="playbtn">play</button> -->
+		<div class="weather-wrapper hide">
+			<div id="scene_1" class="scene">
+				<h3 id="greating">SELAMAT <span id="dayScale"></span></h3>
+				<h2 id="city" class="weather-place"></h2>
+			</div>
+			<div id="scene_2" class="scene">
+				<div id="weather">
+					<span class="weather-temperature"></span>
+					<span id="weatherDesc" class="weather-description capitalize"></span>
+				</div>
+				<div id="time"></div>
+			</div>
+			<div id="scene_3" class="scene">
+				<div id="clock"></div>
+			</div>
+		</div>
+		<div id="videos"></div>
+
+	</main>
+
+	<footer id="footer">
+	</footer>
+
+	<script data-main="../js/config" src="../js/lib/require.js"></script>
+	
+</body>
+</html>

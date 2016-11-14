@@ -1,0 +1,16 @@
+// USAGE OF ANIMATE.SASS; EXAMPLE unicode-bidi: 
+
+
+// CREATE CUSTOM ANIMATION  *ITS MUST BE CODED OUTSIDE OF ELEMENT, DO NOT NESTED
+@include keyframes(my-animation) {
+    0%, 100% {
+        background-color: blue;
+    }
+    50% {
+        background-color: red;
+    }
+}
+
+
+// CALL THE ANIMATION *ITS MUST CODED INSIDE ELEMENT 
+@include animation(flash 10s infinite);

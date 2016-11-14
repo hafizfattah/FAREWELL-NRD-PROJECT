@@ -1,0 +1,31 @@
+{
+  "name": "quoteandcode",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "hafiz fattah"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.1.0",
+    "gsap": "^1.19.0",
+    "susy": "^2.2.12",
+    "mappy-breakpoints": "^0.2.3",
+    "font-awesome": "fontawesome#^4.6.3",
+    "video.js": "videojs#^5.13.0",
+    "simpleWeather": "^3.1.0",
+    "moment": "^2.15.1",
+    "requirejs": "^2.3.2"
+  },
+  "dependencies": {
+    "requirejs-plugins": "^1.0.3"
+  }
+}

@@ -1,0 +1,168 @@
+@mixin pixel-to-percent ($parent-px, $pixToPercent){
+	$width : ($pixToPercent * 100%) / $parent-px;
+	width: $width ;
+}
+// rem fallback - credits: http://zerosixthree.se/
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin clearfix { 
+	*zoom:1;
+    &:before, &:after { 
+		content: ""; 
+		display: table; 
+	}
+    &:after { 
+		clear: both; 
+	}
+}
+
+@mixin animationDelay ($delay) { 
+	-webkit-animation-delay: $delay;  
+	-moz-animation-delay:    $delay;
+	-ms-animation-delay:     $delay; 
+	-o-animation-delay:      $delay;  
+    animation-delay:      $delay; 
+}
+@mixin transform-origin ($val) { 
+	-webkit-animation-delay: $val;  
+	-moz-animation-delay:    $val;
+	-ms-animation-delay:     $val; 
+	-o-animation-delay:      $val;  
+    animation-delay:      $val; 
+}
+@mixin appearance ($val) { 
+	-webkit-appearance: $val;  
+	-moz-appearance:    $val;
+	-ms-appearance:     $val; 
+	-o-appearance:      $val;  
+    appearance:      $val; 
+}
+
+
+$interval: .2s;
+$classesToAdd: 10;
+
+@for $i from 1 to $classesToAdd + 1 {
+	._#{$i} { @include animationDelay($i * $interval); }
+}
+
+@mixin box-sizing($box-model) {
+	-webkit-box-sizing: $box-model; 
+	-moz-box-sizing: $box-model; 
+	box-sizing: $box-model;
+}
+@mixin transform($transform-option) {
+	-webkit-transform: $transform-option; 
+	-moz-transform: $transform-option; 
+	transform: $transform-option;
+}
+@mixin transition($transition-option) {
+	-webkit-transition: $transition-option; 
+	-moz-transition: $transition-option; 
+	transition: $transition-option;
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+@mixin animation($animations) {
+	-moz-animation: $animations;
+	-o-animation: $animations;
+	-ms-animation: $animations;
+	-webkit-animation: $animations;
+	animation: $animations;
+}
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+	background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// antialiasing mode font rendering
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+@mixin inline-block {
+	display: -moz-inline-stack;
+	-moz-box-orient: vertical;
+	display: inline-block;
+	*display: inline;
+	vertical-align: top;
+	*zoom: 1;
+}
+
+
+// Mixin for placeholder styling
+// ------------------
+@mixin placeholder( $color ) {
+	&::-webkit-input-placeholder { color: $color; }
+	&:-moz-placeholder { color: $color; }
+	&:-ms-input-placeholder { color: $color; }
+}
+
+// Webkit-style focus
+// ------------------
+@mixin tab-focus {
+	outline: thin dotted #333;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+
+
+
+// Center-absolute a block level element
+// ----------------------------------
+@mixin center-absolute {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include transform(translate(-50%, -50%));
+}
+
+// Center-absolute a block level element
+// ----------------------------------
+@mixin vertical-align {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+
+@mixin ellipsis ($max-width){
+  display: inline-block;
+  max-width: $max-width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

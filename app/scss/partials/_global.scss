@@ -1,0 +1,102 @@
+*{
+	@include box-sizing(border-box);
+	&:before,
+	&:after{
+		content: "";
+	}
+}
+html{
+	font-size: $base-font-size;
+}
+body{
+	margin: 0;
+	padding: 0;
+}
+.inline__block{
+	@include inline-block;
+}
+.align{
+	&--left{
+		text-align: left;
+	}
+	&--center{
+		text-align: center;
+	}
+	&--right{
+		text-align: right;
+	}
+}
+img.align{
+	&--left{
+		float: left;
+		text-align: left;
+		margin-right: 20px;
+	}
+	&--center{
+		text-align: center;
+		float: none;
+		display: block;
+		width: 100%;
+	}
+	&--right{
+		text-align: right;
+		float: right;
+		margin-left: 20px;
+	}
+}
+
+.list{
+	&--none{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	&--decimal{
+		list-style-type: decimal;
+	}
+	&--disc{
+		list-style-type: disc;
+	}
+}
+
+.center{
+	&--block{
+		display: block;
+		margin: 0 auto;
+	}
+	&--absolute{
+		@include center-absolute;
+	}
+	&--child{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&--vertical{
+		@include vertical-align;
+	}
+}
+
+.text{
+	&--uppercase{
+		text-transform: uppercase;
+	}
+	&--lowercase{
+		text-transform: lowercase;
+	}
+	&--capitalize{
+		text-transform: capitalize;
+	}
+}
+
+.float{
+	&--left{
+		float: left;
+	}
+	&--right{
+		float: right;
+	}
+	&--none{
+		float: none !important;
+	}
+}

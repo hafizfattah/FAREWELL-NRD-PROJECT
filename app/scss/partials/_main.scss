@@ -1,0 +1,102 @@
+body{
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background: LightBlue ;
+}
+#videos{
+	width: 100%;
+	height: 100%;
+
+}
+.video-js .vjs-big-play-button{
+	// @include center-absolute;
+	// background: red;
+	// z-index: 100;
+	// display: block;
+}
+.vjs-ended{
+	display: none;
+}
+.scene{
+	@include center-absolute;
+	color: white;
+	text-transform: uppercase;
+	@include roboto;
+	display: none;
+	z-index: 100;
+}
+#scene_1{
+	#city{
+		white-space: nowrap;
+		font-size: 10vw;
+		text-transform: uppercase;
+		margin: 0;
+		line-height: 1;
+		opacity: 0;
+	}
+	#greating{
+		white-space: nowrap;
+		font-size: 5vw;
+		text-align: center;
+		margin: 0;
+		font-weight: 100;
+		opacity: 0;
+	}
+	
+}
+#scene_2{
+	#weather{
+		opacity: 0;
+		h2 {
+			font-size: 6vw;
+			margin: 0 0 8px;
+			text-align: center;
+			text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+			font-weight: 900;
+			span{
+				font-weight: 100;
+				font-size: 60px;
+			}
+		}
+		i{
+			font-size: 12vw;
+			margin-top: -50px;
+			@include weather_font;
+			display: inline-block;
+			font-weight: 100;
+			line-height: 1;
+			margin-bottom: 20px;
+		}
+	}
+
+	#timenow{
+		opacity: 0;
+		text-align: center;
+		@include roboto;
+		color: white;
+		font-size: 6vw;
+		font-weight: 100;
+		#month{
+			font-weight: 900;
+			display: inline-block;
+		}
+	}
+}
+#scene_3{
+	#timenow{
+    	font-family: 'ds-digitalnormal';
+		text-shadow: rgb(253, 0, 0) 0px 0px 12px;
+		color: rgb(253, 0, 0);
+		font-size: 22vw;
+		white-space: nowrap;	
+	}
+}
+
+#button{
+	position: fixed;
+	top: 0;
+	right: 0;
+	background: red;
+	z-index: 10000;
+}
